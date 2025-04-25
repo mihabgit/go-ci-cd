@@ -26,3 +26,11 @@ jobs:
 
     - name: Test
       run: go test -v ./...
+
+  deliver:
+    name: Deliver
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print Delivery Message
+        run: echo "Code has been built and tested successfully. Read for further deployment steps."
